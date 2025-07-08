@@ -4,4 +4,7 @@ BIN="bin"
 MAIN="Main"
 
 mkdir -p "$BIN"
-javac -d "$BIN" "$SRC/$MAIN.java" && java -cp "$BIN" "$MAIN"
+
+# Compile semua file .java dari src
+find "$SRC" -name "*.java" | xargs javac -d "$BIN" &&
+java -cp "$BIN" "$MAIN"
