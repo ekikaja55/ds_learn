@@ -14,15 +14,8 @@ public class Main {
         boolean start = true;
 
         while (start) {
-            System.out.println("\nMenu : ");
-            System.out.println("1. Basic Array");
-            System.out.println("2. Reverse Array");
-            System.out.println("3. Linear Search");
-            System.out.println("4. Linear Search Multiple Match");
-            System.out.println("0. Exit ");
-            System.out.print(">>> ");
+            Helper.menu();
             int input = s.nextInt();
-
             switch (input) {
                 case 0:
                     System.out.println("Process Exit...");
