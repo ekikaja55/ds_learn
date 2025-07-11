@@ -13,6 +13,8 @@ public class Helper {
         System.out.println("4. Linear Search Multiple Match");
         System.out.println("5. Linear Search String");
         System.out.println("6. String Reversal");
+        System.out.println("7. Palindrome Checker");
+        System.out.println("8. Char Counter Checking");
 
         System.out.println("0. Exit\n");
     }
@@ -117,7 +119,7 @@ public class Helper {
         return indexHasil;
     }
 
-    public static String[] reversedString(String data) {
+    public static String reversedString(String data) {
         String[] temp = data.split("");
         String[] reversedString = new String[temp.length];
         int kanan = temp.length - 1;
@@ -134,7 +136,32 @@ public class Helper {
             kanan--;
 
         }
-        return reversedString;
+        return String.join("", reversedString);
     }
 
+    public static String cekPalindrome(String teks) {
+        String temp = reversedString(teks);
+        if (teks.equalsIgnoreCase(temp)) {
+            return "Inputan : " + teks + " -> Adalah Palindrome";
+        }
+        return "Inputan : " + teks + " -> Bukan Palindrome";
+
+    }
+
+    public static int charCounter(String teks, String target) {
+        if (target.length() != 1) {
+            return -1;
+        }
+        int count = 0;
+        String[] temp = teks.split("");
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i].equalsIgnoreCase(target)) {
+                count++;
+            }
+        }
+        if (count <= 0) {
+            return 0;
+        }
+        return count;
+    }
 }

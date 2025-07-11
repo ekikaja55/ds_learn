@@ -75,10 +75,33 @@ public class Main {
                     break;
                 case 6:
                     inputanStr = Helper.cekInputString(k, "String Reversal ", "Masukan Inputan :");
-                    System.out.println(inputanStr);
-                    hasilArrayString = Helper.reversedString(inputanStr);
-                    Helper.printArrayString(hasilArrayString);
+                    hasilStr = Helper.reversedString(inputanStr);
+
+                    System.out.println("inputan : " + inputanStr + " berubah menjadi -> " + hasilStr);
                     break;
+
+                case 7:
+                    inputanStr = Helper.cekInputString(k, "Palindrome Checker ", "Masukan Inputan :");
+                    hasilStr = Helper.cekPalindrome(inputanStr);
+                    System.out.println(hasilStr);
+
+                    break;
+                case 8:
+                    inputanStr = Helper.cekInputString(k, "Char Counter Checker ", "Masukan Inputan Teks:");
+                    String target = Helper.cekInputString(k, "", "Masukan Inputan Target : ");
+                    hasilInt = Helper.charCounter(inputanStr, target);
+
+                    if (hasilInt == -1) {
+                        System.out.println("Inputan Target Hanya Boleh 1 Karakter");
+                    } else if (hasilInt == 0) {
+                        System.out.println(
+                                "Hasil Pencarian Dari Inputan Target : " + target + " -> " + " Tidak Ditemukan");
+
+                    } else {
+                        System.out.println("Hasil Pencarian Dari Inputan Target : " + target + " -> " + hasilInt + " Karakter Yang Cocok ");
+                    }
+                    break;
+                
                 default:
                     System.out.println("Inputan Tidak Valid ");
                     break;
